@@ -33,6 +33,9 @@ FileManager.new(path: '/some/cool/path', excludes: 'ignore_me.rb')
 => #<FileManager:0x007fe2ab20f608 @path="some/cool/path", @excludes="ignore_me.rb">
 ```
 
+### Methods
+
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
