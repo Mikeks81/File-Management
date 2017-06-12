@@ -1,4 +1,5 @@
 # FileManagement
+[![Build Status](https://travis-ci.org/Mikeks81/File-Management.svg?branch=master)](https://travis-ci.org/Mikeks81/File-Management)
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/file_management`. To experiment with that code, run `bin/console` for an interactive prompt.
 
@@ -22,7 +23,15 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### initialize
+You can initialize the gem by telling it the path you would like to manage (via path) and and file that would like to ignore (via excludes). If you don't specify a path it will set to './'
+```
+FileManager.new
+=> #<FileManager:0x007fe2ab267790 @path="./", @excludes="">
+
+FileManager.new(path: '/some/cool/path', excludes: 'ignore_me.rb')
+=> #<FileManager:0x007fe2ab20f608 @path="some/cool/path", @excludes="ignore_me.rb">
+```
 
 ## Development
 
