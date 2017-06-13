@@ -72,8 +72,10 @@ f.stats('new_file.rb', 'ftype')
 ```
 
 ### file_size(file)
+Gives you the file size in SI standard.
 ```
-
+f.file_size('file_manager.rb')
+=> "1.77 kB"
 ```
 
 ### rename(file, new_name)
