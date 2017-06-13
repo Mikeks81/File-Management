@@ -22,7 +22,7 @@ Or install it yourself as:
 ## Usage
 
 ### initialize
-You can initialize the gem by telling it the path you would like to manage (via path) and and file that would like to ignore (via excludes). If you don't specify a path it will set to './' . File Manager will make all necessary directories needed if they don't exist.
+You can initialize the gem by telling it the path you would like to manage (via path) and and file that would like to ignore (via excludes). If you don't specify a path it will set to './'
 
 ```
 FileManager.new
