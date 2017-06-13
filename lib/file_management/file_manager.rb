@@ -43,11 +43,12 @@ class FileManager
   end
 
   def stats(file, request)
+    raise FileManagementErrors.new('File doesn\'t exist') unless file_exists?(file)
     File.stat(pwd(file)).send(request)
   end
 
   def file_size(file)
-    puts 'File does not exist' unless file_exists?(file)
+    return false unless file_exists?(file)
     Filesize.new(File.size(pwd(file)), Filesize::SI).pretty
   end
 
@@ -57,7 +58,7 @@ class FileManager
   end
 
   def rename(file, new_name)
-    return false if file_exists?(File.split(new_name).last)
+    return false if file_exists?(new_name) || !file_exists?(file)
     File.rename(pwd(file), pwd(new_name))
   end
 
