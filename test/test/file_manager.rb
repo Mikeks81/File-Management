@@ -48,7 +48,7 @@ class FileManager
 
   def file_size(file)
     puts 'File does not exist' unless file_exists?(file)
-    Filesize.new(File.size(pwd(file)), Filesize::SI).pretty
+    Filesize.new(file, Filesize::SI).pretty
   end
 
   def make_file(file)
@@ -57,7 +57,7 @@ class FileManager
   end
 
   def rename(file, new_name)
-    return false if file_exists?(File.split(new_name).last)
+    return false unless file_exists?(File.split(new_name).last)
     File.rename(pwd(file), pwd(new_name))
   end
 
