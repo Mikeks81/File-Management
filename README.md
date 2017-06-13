@@ -1,6 +1,7 @@
 # FileManagement
 [![Build Status](https://travis-ci.org/Mikeks81/File-Management.svg?branch=master)](https://travis-ci.org/Mikeks81/File-Management)
 [![Coverage Status](https://coveralls.io/repos/github/Mikeks81/File-Management/badge.svg?branch=master)](https://coveralls.io/github/Mikeks81/File-Management?branch=master)
+[![Code Climate](https://codeclimate.com/github/codeclimate/codeclimate/badges/gpa.svg)](https://codeclimate.com/github/codeclimate/codeclimate)
 
 Simple File Management library for creating, deleting, file stats and listing all files in a directory. Gem is still in the very early phase of development. Please feel free to make suggestions or identify bugs.
 
