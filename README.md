@@ -33,7 +33,7 @@ FileManager.new(path: '/some/cool/path', excludes: 'ignore_me.rb')
 ```
 
 ## Methods
-#### all_files
+### all_files
 returns an array of files in the directory
 all files listed in the excludes attribute are ignored and not added to the array
 ```
