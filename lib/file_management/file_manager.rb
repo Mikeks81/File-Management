@@ -33,7 +33,7 @@ class FileManager
     excludes
   end
 
-  def all_files(all = false)
+  def all_files
     file_list = Dir.entries(path).select { |f| File.file?("#{path}/#{f}") }
     file_list - (%w(. .. .DS_Store file_management.rb) + format_excludes)
   end
