@@ -43,12 +43,18 @@ class FileManager
   end
 
   def stats(file, request)
+    raise FileManagementErrors.new('File doesn\'t exist') unless file_exists?(file)
     File.stat(pwd(file)).send(request)
   end
 
   def file_size(file)
+<<<<<<< Updated upstream
     puts 'File does not exist' unless file_exists?(file)
     Filesize.new(file, Filesize::SI).pretty
+=======
+    return false unless file_exists?(file)
+    Filesize.new(File.size(pwd(file)), Filesize::SI).pretty
+>>>>>>> Stashed changes
   end
 
   def make_file(file)
@@ -57,7 +63,11 @@ class FileManager
   end
 
   def rename(file, new_name)
+<<<<<<< Updated upstream
     return false unless file_exists?(File.split(new_name).last)
+=======
+    return false if file_exists?(new_name) || !file_exists?(file)
+>>>>>>> Stashed changes
     File.rename(pwd(file), pwd(new_name))
   end
 
