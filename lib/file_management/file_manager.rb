@@ -57,6 +57,32 @@ class FileManager
     FileUtils.touch(pwd(file))
   end
 
+  def url_sanitize(file_name)
+    fn = file_name.split(/(?<=.)\.(?=[^.])(?!.*\.[^.])/m)
+    fn.map! { |s| s.gsub(/[^a-z0-9\-]+/i, '_') }
+    return fn.join '.'
+  end
+
+  def save_file(file, file_name)
+    if !file_exists?(file_name)
+      puts "^^^^^^^^ STARTING UPLOAD of #{file_name} ^^^^^^^^^^^^^^"
+      File.open(pwd(file_name), 'wb') do |f|
+        f.write(file.read)
+      end
+      puts "^^^^^^^^ FINISHED UPLOAD of #{file_name} ^^^^^^^^^^^^^^"
+      file_exists?(file_name)
+    else
+      puts "^^^^^^^^^^ existing file ^^^^^^^^^^^^^^^^^^^^^^"
+      "File already exists."
+    end
+  end
+
+  def copy_file(src)
+    file_name = File.split(src).last
+    return false if file_exists?(file_name)
+    FileUtils.cp(src, pwd(file_name))
+  end
+
   def rename(file, new_name)
     return false if file_exists?(new_name) || !file_exists?(file)
     File.rename(pwd(file), pwd(new_name))
